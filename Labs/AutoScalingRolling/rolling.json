@@ -108,6 +108,13 @@
         },
         "Ec2InstanceAutoScalingGroup": {
             "Type": "AWS::AutoScaling::AutoScalingGroup",
+            "UpdatePolicy": {
+                "AutoScalingRollingUpdate": {
+                    "MaxBatchSize": "4",
+                    "MinInstancesInService": "1",
+                    "PauseTime": "PT2M"
+                }
+            },
             "Properties": {
                 "VPCZoneIdentifier": [
                     {
